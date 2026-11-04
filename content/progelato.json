@@ -1,0 +1,111 @@
+{
+  "slug": "progelato",
+  "title": "No Cheat Progelato",
+  "category": "Packaging / Product Visuals",
+  "headline": "Seven flavours. One visual family.",
+  "summary": "A seven-flavour packaging range for No Cheat Progelato, presented through pouch artwork, individual mockups, and a cohesive full-family visual.",
+  "projectType": "Packaging & Brand System",
+  "status": "Concept & Product Visualization",
+  "coverImage": "/projects/packaging/packaging-podium-hero.webp",
+  "familyShotImage": "/projects/packaging/packaging-podium-hero.webp",
+  "focusTags": [
+    "Packaging Design",
+    "Product Visualisation",
+    "Visual Consistency",
+    "Flavour Differentiation",
+    "Brand System Thinking"
+  ],
+  "brandSystem": {
+    "upperPanel": "#FAF8F5",
+    "brandLogo": "NO CHEAT PROGELATO",
+    "claims": [
+      "18g Protein per Serving",
+      "No Added Sugar",
+      "Prebiotics + Digestive Enzymes",
+      "Contains DHA Omega-3"
+    ]
+  },
+  "overview": "A seven-flavour packaging range designed as a unified visual family. A shared structural hierarchy connects the entire lineup—anchored by a consistent brand crest, high-contrast claims badges, and central dessert illustration—while flavour-specific colour-blocking and ingredient cues provide instantaneous shelf differentiation.",
+  "flavours": [
+    {
+      "id": "blueberry-muffin",
+      "name": "Blueberry Muffin",
+      "descriptor": "Blueberry flavour with a soft, bakery-inspired muffin finish.",
+      "accentColor": "#4B4278",
+      "flavourCue": "Berry Muffin Delight",
+      "ingredients": "Fresh blueberries & bakery muffin crumble",
+      "mockupImage": "/projects/packaging/pouches/blueberry-muffin-pouch.webp",
+      "flatImage": "/projects/progelato/blueberry-muffin-flat.png"
+    },
+    {
+      "id": "butterly-crunch",
+      "name": "Butterly Crunch",
+      "descriptor": "Butterscotch & toffee crunch with rich buttery undertones.",
+      "accentColor": "#A86D37",
+      "flavourCue": "Buttery Crunch Delight",
+      "ingredients": "Golden caramel toffee cubes & waffle crunch",
+      "mockupImage": "/projects/packaging/pouches/butterly-crunch-pouch.webp",
+      "flatImage": "/projects/progelato/butterly-crunch-flat.png"
+    },
+    {
+      "id": "chocolicious",
+      "name": "Chocolicious",
+      "descriptor": "Rich & creamy chocolate gelato with intense Dutch cocoa indulgence.",
+      "accentColor": "#543026",
+      "flavourCue": "Rich Cocoa Taste",
+      "ingredients": "Dark cocoa swirls & roasted chocolate chunks",
+      "mockupImage": "/projects/packaging/pouches/chocolicious-pouch.webp",
+      "flatImage": "/projects/progelato/chocolicious-flat.png"
+    },
+    {
+      "id": "cookieej-n-cream",
+      "name": "Cookieej ’N’ Cream",
+      "descriptor": "Sweet vanilla cream packed with crunchy chocolate biscuit crumbs.",
+      "accentColor": "#243E63",
+      "flavourCue": "Cookie Cream Delight",
+      "ingredients": "Crushed black cocoa cookies & sweet milk cream",
+      "mockupImage": "/projects/packaging/pouches/cookieej-n-cream-pouch.webp",
+      "flatImage": "/projects/progelato/cookieej-n-cream-flat.png"
+    },
+    {
+      "id": "creamy-strawberry",
+      "name": "Creamy Strawberry",
+      "descriptor": "Bright and creamy strawberry swirl with natural fruit notes.",
+      "accentColor": "#8C1D40",
+      "flavourCue": "Real Fruit Goodness",
+      "ingredients": "Sun-ripened strawberries & fresh puree swirl",
+      "mockupImage": "/projects/packaging/pouches/creamy-strawberry-pouch.webp",
+      "flatImage": "/projects/progelato/creamy-strawberry-flat.png"
+    },
+    {
+      "id": "mastana-mango",
+      "name": "Mastana Mango",
+      "descriptor": "Sun-drenched tropical mango with lush sweet fragrance.",
+      "accentColor": "#C86A18",
+      "flavourCue": "Tropical Mango Delight",
+      "ingredients": "Alphonso mango cubes & sun-gold puree",
+      "mockupImage": "/projects/packaging/pouches/mastana-mango-pouch.webp",
+      "flatImage": "/projects/progelato/mastana-mango-flat.png"
+    },
+    {
+      "id": "shahi-zaffran-pista",
+      "name": "Shahi Zaffran Pista",
+      "descriptor": "Regal Indian royal dessert blend with fragrant saffron and crunchy pistachio.",
+      "accentColor": "#617A38",
+      "flavourCue": "Zaffran Pista Delight",
+      "ingredients": "Iranian saffron threads & roasted pistachios",
+      "mockupImage": "/projects/packaging/pouches/shahi-zaffran-pista-pouch.webp",
+      "flatImage": "/projects/progelato/shahi-zaffran-pista-flat.png"
+    }
+  ],
+  "dielines": {
+    "dimensions": "150mm W × 230mm H × 70mm Bottom Gusset",
+    "material": "Recyclable mono-PE pouch with soft-touch matte finish & spot UV over brand crest",
+    "features": [
+      "Tear notch with press-to-close resealable zipper",
+      "Rounded corners for premium tactile feel",
+      "High-barrier aluminium-free foil structure",
+      "Full wrap-around ingredient illustration panels"
+    ]
+  }
+}

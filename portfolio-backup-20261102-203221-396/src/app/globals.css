@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cubao: 'Cubao Free', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --color-magenta: #890149;
+  --color-ivory: #F3F3E7;
+  --color-espresso: #24121B;
+}
+
+@font-face {
+  font-family: 'Cubao Free';
+  src: url('/fonts/cubao-free.woff2') format('woff2'),
+       url('/fonts/cubao-free.ttf') format('truetype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F3F3E7;
+  color: #24121B;
+}
+
+body {
+  font-family: var(--font-poppins), 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #F3F3E7;
+  color: #24121B;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #890149;
+  color: #F3F3E7;
+}
+
+/* Accessible visible focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #890149;
+  outline-offset: 3px;
+}
+
+/* Hairline borders */
+.border-hairline {
+  border-color: rgba(36, 18, 27, 0.12);
+}
+
+.border-hairline-light {
+  border-color: rgba(243, 243, 231, 0.2);
+}
+
+/* Paper grain texture effect */
+.bg-grain {
+  background-image: radial-gradient(rgba(36, 18, 27, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Smooth transitions */
+.transition-editorial {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

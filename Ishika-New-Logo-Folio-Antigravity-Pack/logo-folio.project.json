@@ -1,0 +1,80 @@
+{
+  "id": "logo-folio",
+  "slug": "logo-folio",
+  "order": 3,
+  "featured": true,
+  "title": "Logo Folio",
+  "eyebrow": "Self-initiated concept collection · AI-assisted visual study",
+  "headline": "Six Brands. Six Stories. Six Unique Identities.",
+  "category": "Logo Design · Brand Identity · Visual Exploration",
+  "year": "2026",
+  "coverImage": "/projects/logo-folio/logo-folio-homepage-cover.webp",
+  "overviewImage": "/projects/logo-folio/logo-folio-overview.webp",
+  "summary": "A collection of six fictional brand identities exploring distinctive typography, illustrative symbols, visual storytelling, and applications across different industries.",
+  "overview": "From tactile specialty coffee and botanical skincare to contemporary fashion, hospitality, gourmet food, and experimental digital design, each identity is treated as an independent concept with its own visual language.",
+  "processNote": "This is a speculative, AI-assisted exploration. The visuals are image-based concept studies, not independently verified client commissions, finalized vector identity systems, or production-ready brand guidelines.",
+  "services": [
+    "Logo Exploration",
+    "Visual Identity",
+    "Typography",
+    "Illustrative Symbol Concepts",
+    "Art Direction"
+  ],
+  "brands": [
+    {
+      "name": "brùlè",
+      "slug": "brule",
+      "category": "Specialty Coffee / Café",
+      "tagline": "Good Coffee. Brighter Days.",
+      "concept": "A tactile coffee identity with expressive serif letterforms and a leaf-and-bean mark, applied across coffee packaging, ceramics, and signage.",
+      "panelImage": "/projects/logo-folio/brands/01-brule-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/01-brule-hero.webp"
+    },
+    {
+      "name": "vèrda",
+      "slug": "verda",
+      "category": "Natural Skincare / Wellness",
+      "tagline": "Skin Rituals in Harmony",
+      "concept": "A botanical wellness direction combining an elegant wordmark, leaf symbolism, deep greens, and quiet product photography.",
+      "panelImage": "/projects/logo-folio/brands/02-verda-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/02-verda-hero.webp"
+    },
+    {
+      "name": "nína",
+      "slug": "nina",
+      "category": "Fashion / Apparel",
+      "tagline": "Wear Your Story",
+      "concept": "A high-contrast fashion wordmark with unexpected accents, expressive editorial typography, and tactile labels and accessories.",
+      "panelImage": "/projects/logo-folio/brands/03-nina-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/03-nina-hero.webp"
+    },
+    {
+      "name": "lùmora",
+      "slug": "lumora",
+      "category": "Travel / Hospitality",
+      "tagline": "Journeys with Meaning",
+      "concept": "A destination-led hospitality identity featuring a stylized horizon motif, refined typography, and atmospheric coastal imagery.",
+      "panelImage": "/projects/logo-folio/brands/04-lumora-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/04-lumora-hero.webp"
+    },
+    {
+      "name": "tála",
+      "slug": "tala",
+      "category": "Gourmet Food / Beverage",
+      "tagline": "Flavours That Feel Like Home",
+      "concept": "An expressive food identity driven by a hand-drawn-style wordmark, lively red and orange tones, and an illustrated tomato mark.",
+      "panelImage": "/projects/logo-folio/brands/05-tala-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/05-tala-hero.webp"
+    },
+    {
+      "name": "pixel drift",
+      "slug": "pixel-drift",
+      "category": "Creative Studio / Digital",
+      "tagline": "Ideas in Motion",
+      "concept": "A modern digital identity mixing chunky contemporary typography, luminous gradients, and a fluid abstract graphic symbol.",
+      "panelImage": "/projects/logo-folio/brands/06-pixel-drift-case-study.webp",
+      "heroImage": "/projects/logo-folio/previews/06-pixel-drift-hero.webp"
+    }
+  ],
+  "imageAlt": "Editorial Logo Folio overview featuring six fictional brand identity concepts."
+}

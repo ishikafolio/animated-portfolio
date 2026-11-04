@@ -1,0 +1,8 @@
+{
+  "source": "https://www.live2d.com/en/sdk/download/web/",
+  "version": "Cubism SDK for Web 5 R5",
+  "archive": "CubismSdkForWeb-5-r.5.zip",
+  "coreSha256": "8741f739779b5d5210872bd3d7d99f0f1e56e6c87409e7d26d6bb4b80aa1ef47",
+  "coreModified": false,
+  "framework": "Official Framework TypeScript compiled to ES2020 JavaScript; obsolete TypeScript-only namespace lint directives removed; copyright comments retained"
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "careconnect",
+  "title": "CareConnect",
+  "category": "Mobile UI · Product Design",
+  "tagline": "Everyday warmth, designed for care.",
+  "summary": "A ten-screen mobile UI concept that helps a parent manage everyday medication and check-ins while family caregivers receive clear, permission-based updates.",
+  "projectType": "UI/UX concept",
+  "status": "Concept/prototype; not a production healthcare app",
+  "coverImage": "/projects/careconnect/cover.webp",
+  "overviewImage": "/projects/careconnect/overview.webp",
+  "styleGuideImage": "/projects/careconnect/style-guide.webp",
+  "prototypeUrl": "/projects/careconnect/prototype/index.html",
+  "designSystem": {
+    "primary": "#5146A6",
+    "background": "#FAF8F5",
+    "text": "#25304A",
+    "lavender": "#EFECFA",
+    "peach": "#F8E4D7",
+    "font": "Atkinson Hyperlegible Next"
+  },
+  "conceptGoal": "Help a parent manage familiar daily care tasks while letting family caregivers stay informed through clearly controlled sharing.",
+  "keyFeatures": [
+    "Medicine reminders and taken/snooze states",
+    "Daily wellbeing check-ins",
+    "Family sharing permissions",
+    "Request help and call family",
+    "Caregiver overview and medicine-plan management",
+    "Notification preferences"
+  ],
+  "designObservations": [
+    "Two related experiences: parent and caregiver",
+    "Large, clearly labelled touch targets and legible typography",
+    "Soft, reassuring surfaces with strong readable text",
+    "Permission settings that clarify what is shared"
+  ],
+  "screens": [
+    {
+      "title": "Welcome & Connect",
+      "user": "Shared",
+      "src": "/projects/careconnect/gallery/01_welcome_connect.webp"
+    },
+    {
+      "title": "Parent Home",
+      "user": "Parent",
+      "src": "/projects/careconnect/gallery/02_parent_home.webp"
+    },
+    {
+      "title": "Medicine Reminder",
+      "user": "Parent",
+      "src": "/projects/careconnect/gallery/03_medicine_reminder.webp"
+    },
+    {
+      "title": "My Medicines",
+      "user": "Parent",
+      "src": "/projects/careconnect/gallery/04_my_medicines.webp"
+    },
+    {
+      "title": "My Family & Sharing",
+      "user": "Parent",
+      "src": "/projects/careconnect/gallery/05_family_sharing.webp"
+    },
+    {
+      "title": "SOS / Help",
+      "user": "Parent",
+      "src": "/projects/careconnect/gallery/06_sos_help.webp"
+    },
+    {
+      "title": "Caregiver Home",
+      "user": "Caregiver",
+      "src": "/projects/careconnect/gallery/07_caregiver_home.webp"
+    },
+    {
+      "title": "Parent Details",
+      "user": "Caregiver",
+      "src": "/projects/careconnect/gallery/08_parent_details.webp"
+    },
+    {
+      "title": "Manage Medicines",
+      "user": "Caregiver",
+      "src": "/projects/careconnect/gallery/09_manage_medicines.webp"
+    },
+    {
+      "title": "Caregiver Settings",
+      "user": "Caregiver",
+      "src": "/projects/careconnect/gallery/10_caregiver_settings.webp"
+    }
+  ],
+  "caseStudySections": [
+    {
+      "heading": "Everyday warmth, designed for care",
+      "body": "Daily care can involve medicine schedules, check-ins and communication across a family. CareConnect explores a calmer, more approachable way to bring these small tasks together."
+    },
+    {
+      "heading": "Two sides of one caring experience",
+      "body": "The concept includes separate parent and caregiver flows. Parents see simple daily actions and decide what to share. Caregivers can review updates and, where permission is provided, help manage medicine plans."
+    },
+    {
+      "heading": "Clarity in the details",
+      "body": "A soft iris-and-lavender palette, readable Atkinson Hyperlegible Next typography and generous touch targets give the interface a gentle, accessible-feeling visual direction."
+    },
+    {
+      "heading": "From screens to interactions",
+      "body": "An offline HTML prototype demonstrates navigation and selected confirmation, sharing, reminder and help flows. It uses illustrative data and simulated actions; it is not a production care or emergency service."
+    }
+  ],
+  "disclaimers": [
+    "Do not claim clinical validation, usability testing, measurable impact, real users or deployed product performance.",
+    "Do not describe simulated calls, alerts or account verification as functional services.",
+    "Ishika’s specific project role and actual research process were not supplied; do not invent them."
+  ]
+}

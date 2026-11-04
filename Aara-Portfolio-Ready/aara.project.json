@@ -1,0 +1,58 @@
+{
+  "id": "aara",
+  "slug": "aara",
+  "title": "Aara",
+  "displayTitle": "Aara — Tea & Stillness",
+  "section": "packaging",
+  "orderWithinSection": 2,
+  "globalProjectOrder": 4,
+  "route": "/work/aara",
+  "type": "self-initiated concept",
+  "category": "Brand Identity / Packaging Design",
+  "eyebrow": "Brand Identity · Packaging",
+  "headline": "A quieter kind of everyday ritual.",
+  "summary": "A conceptual identity for an imagined Indian tea label, exploring stillness through refined serif typography, botanical illustration, earthy tones and coordinated packaging.",
+  "description": "Aara imagines tea as a small everyday ritual. Its visual language balances deep green and warm parchment tones, expressive high-contrast typography and delicate botanical artwork across cartons, a tea tin and printed touchpoints.",
+  "focus": [
+    "Brand identity concept",
+    "Packaging design",
+    "Typography",
+    "Botanical illustration",
+    "Visual storytelling"
+  ],
+  "cover": "/projects/aara/aara-cover.webp",
+  "images": [
+    {
+      "src": "/projects/aara/aara-cover.webp",
+      "alt": "Aara tea brand concept display with green and ivory cartons, a tea tin and stationery",
+      "kind": "original supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-ivory-carton-crop.webp",
+      "alt": "Crop of original Aara image showing the ivory botanical tea carton",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-forest-carton-crop.webp",
+      "alt": "Crop of original Aara image showing the deep-green tea carton",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-tea-tin-crop.webp",
+      "alt": "Crop of original Aara image showing the olive tea tin",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-stationery-crop.webp",
+      "alt": "Crop of original Aara image showing stationery and cards",
+      "kind": "crop of supplied image"
+    }
+  ],
+  "notes": [
+    "Only one source presentation image was supplied. Detail gallery images are crops of it.",
+    "Do not claim production, print validation, market research, client commission, launch results or extra deliverables.",
+    "Keep Logo Folio first, CareConnect second, Progelato first in Packaging, then Aara second in Packaging.",
+    "Packaging artwork must not be recolored to match the portfolio palette.",
+    "Do not treat Aara as one of the six brands inside Logo Folio."
+  ]
+}

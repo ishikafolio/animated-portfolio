@@ -1,0 +1,54 @@
+{
+  "..\\node_modules\\pixi.js\\lib\\environment-browser\\browserExt.mjs -> ./browserAll.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\environment-browser\\browserExt.mjs -> ./browserAll.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_pixi_js_lib_environment-browser_browserAll_mjs.js"
+    ]
+  },
+  "..\\node_modules\\pixi.js\\lib\\environment-webworker\\webworkerExt.mjs -> ./webworkerAll.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\environment-webworker\\webworkerExt.mjs -> ./webworkerAll.mjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_pixi_js_lib_environment-webworker_webworkerAll_mjs.js"
+    ]
+  },
+  "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./canvas/CanvasRenderer.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./canvas/CanvasRenderer.mjs",
+    "files": []
+  },
+  "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./gl/WebGLRenderer.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./gl/WebGLRenderer.mjs",
+    "files": []
+  },
+  "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./gpu/WebGPURenderer.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\rendering\\renderers\\autoDetectRenderer.mjs -> ./gpu/WebGPURenderer.mjs",
+    "files": []
+  },
+  "..\\node_modules\\pixi.js\\lib\\scene\\text-bitmap\\asset\\loadBitmapFont.mjs -> ../BitmapFont.mjs": {
+    "id": "..\\node_modules\\pixi.js\\lib\\scene\\text-bitmap\\asset\\loadBitmapFont.mjs -> ../BitmapFont.mjs",
+    "files": []
+  },
+  "components\\home\\AnimatedHeroCharacter.tsx -> ./Live2DCharacter": {
+    "id": "components\\home\\AnimatedHeroCharacter.tsx -> ./Live2DCharacter",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_home_Live2DCharacter_tsx.js"
+    ]
+  },
+  "components\\home\\ArticulatedCanvasCharacter.tsx -> pixi.js": {
+    "id": "components\\home\\ArticulatedCanvasCharacter.tsx -> pixi.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_pixi_js_lib_index_mjs.js"
+    ]
+  },
+  "components\\home\\Live2DCharacter.tsx -> ./ArticulatedCanvasCharacter": {
+    "id": "components\\home\\Live2DCharacter.tsx -> ./ArticulatedCanvasCharacter",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_home_ArticulatedCanvasCharacter_tsx.js"
+    ]
+  },
+  "components\\home\\Live2DCharacter.tsx -> @/lib/live2d/cubism-engine": {
+    "id": "components\\home\\Live2DCharacter.tsx -> @/lib/live2d/cubism-engine",
+    "files": [
+      "static/chunks/_app-pages-browser_src_lib_live2d_cubism-engine_js.js"
+    ]
+  }
+}

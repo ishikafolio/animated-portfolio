@@ -1,0 +1,142 @@
+{
+  "id": "aara",
+  "slug": "aara",
+  "title": "Aara",
+  "displayTitle": "Aara — Tea & Stillness",
+  "section": "packaging",
+  "category": "Brand Identity / Packaging Design",
+  "discipline": "BRAND IDENTITY · PACKAGING DESIGN",
+  "eyebrow": "Brand Identity · Packaging",
+  "headline": "A quieter kind of everyday ritual.",
+  "subtitle": "A quieter kind of everyday ritual.",
+  "summary": "A conceptual identity for an imagined Indian tea label, exploring stillness through refined serif typography, botanical illustration, earthy tones and coordinated packaging.",
+  "description": "Aara imagines tea as a small everyday ritual. Its visual language balances deep green and warm parchment tones, expressive high-contrast typography and delicate botanical artwork across cartons, a tea tin and printed touchpoints.",
+  "projectType": "Self-initiated concept · Brand & Packaging Study",
+  "status": "Self-initiated concept, not commissioned client work",
+  "orderWithinSection": 2,
+  "globalProjectOrder": 4,
+  "route": "/work/aara",
+  "ctaText": "Explore Aara",
+  "coverImage": "/projects/aara/aara-cover.webp",
+  "coverAlt": "Aara tea brand concept display with green and ivory cartons, olive tea tin and stationery",
+  "originalImage": "/projects/aara/aara-cover.webp",
+  "focus": [
+    "Brand identity concept",
+    "Packaging design",
+    "Typography",
+    "Botanical illustration",
+    "Visual storytelling"
+  ],
+  "visualLanguage": {
+    "typography": "High-contrast editorial serif paired with understated clean sans-serif",
+    "palette": [
+      {
+        "name": "Forest Green",
+        "hex": "#1E3A2B",
+        "role": "Primary packaging & brand tone"
+      },
+      {
+        "name": "Warm Parchment",
+        "hex": "#F5EFEB",
+        "role": "Cardboard surface & background ground"
+      },
+      {
+        "name": "Olive Green",
+        "hex": "#5C6B47",
+        "role": "Tin container accent tone"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#C46849",
+        "role": "Delicate brand accent"
+      }
+    ],
+    "botanicals": "Delicate fine-line tea leaf and floral illustrations"
+  },
+  "touchpoints": [
+    {
+      "id": "cartons",
+      "title": "Packaging Cartons",
+      "description": "Dual-tone carton design: an ivory botanical variant and a forest-green companion box, creating an elevated presence on the counter.",
+      "crops": [
+        {
+          "id": "ivory-carton",
+          "title": "Ivory Botanical Carton",
+          "src": "/projects/aara/aara-ivory-carton-crop.webp",
+          "alt": "Crop of original Aara image showing the ivory botanical tea carton",
+          "kind": "crop of supplied image"
+        },
+        {
+          "id": "forest-carton",
+          "title": "Forest Green Carton",
+          "src": "/projects/aara/aara-forest-carton-crop.webp",
+          "alt": "Crop of original Aara image showing the deep-green tea carton",
+          "kind": "crop of supplied image"
+        }
+      ]
+    },
+    {
+      "id": "tea-tin",
+      "title": "Olive Tea Tin",
+      "description": "A durable cylindrical tin canister in olive green with a metallic gold rim and subtle botanical crest for loose-leaf storage.",
+      "crops": [
+        {
+          "id": "tea-tin",
+          "title": "Olive Tea Tin Detail",
+          "src": "/projects/aara/aara-tea-tin-crop.webp",
+          "alt": "Crop of original Aara image showing the olive tea tin",
+          "kind": "crop of supplied image"
+        }
+      ]
+    },
+    {
+      "id": "stationery",
+      "title": "Printed Touchpoints & Cards",
+      "description": "Tactile note cards, envelopes, and brand collateral embodying a quiet, thoughtful brand voice.",
+      "crops": [
+        {
+          "id": "stationery",
+          "title": "Stationery Detail",
+          "src": "/projects/aara/aara-stationery-crop.webp",
+          "alt": "Crop of original Aara image showing stationery and cards",
+          "kind": "crop of supplied image"
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/projects/aara/aara-cover.webp",
+      "alt": "Full original Aara tea brand concept display with green and ivory cartons, tea tin and stationery",
+      "kind": "original supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-ivory-carton-crop.webp",
+      "alt": "Crop of original Aara image showing the ivory botanical tea carton",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-forest-carton-crop.webp",
+      "alt": "Crop of original Aara image showing the deep-green tea carton",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-tea-tin-crop.webp",
+      "alt": "Crop of original Aara image showing the olive tea tin",
+      "kind": "crop of supplied image"
+    },
+    {
+      "src": "/projects/aara/aara-stationery-crop.webp",
+      "alt": "Crop of original Aara image showing stationery and cards",
+      "kind": "crop of supplied image"
+    }
+  ],
+  "notes": [
+    "Only one source presentation image was supplied. Detail gallery images are crops of it.",
+    "Do not claim production, print validation, market research, client commission, launch results or extra deliverables.",
+    "Keep Logo Folio first, CareConnect second, Progelato first in Packaging, then Aara second in Packaging.",
+    "Packaging artwork must not be recolored to match the portfolio palette.",
+    "Do not treat Aara as one of the six brands inside Logo Folio."
+  ]
+}
+

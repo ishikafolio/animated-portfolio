@@ -1,0 +1,15 @@
+This portfolio uses Live2D Cubism SDK for Web 5 R5.
+Copyright(c) Live2D Inc. All rights reserved.
+
+Cubism Core is copied unchanged from the official SDK archive:
+https://www.live2d.com/en/sdk/download/web/
+It is governed by the Live2D Proprietary Software License Agreement:
+https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html
+
+The Cubism Framework and shaders are governed by the Live2D Open Software License:
+https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html
+Framework TypeScript was compiled to JavaScript; copyright and license comments remain.
+Core-LICENSE.md, Framework-LICENSE.md and RedistributableFiles.txt are preserved alongside this notice.
+
+The included character model and portfolio content are separate from the SDK.
+Publishing remains subject to Live2D's applicable publication/release license terms.

@@ -1,0 +1,152 @@
+﻿[
+    {
+        "path":  "src/app/globals.css",
+        "sha256":  "70f5d7ce1a52113dfc55424eb88297013f14ed1f1c8dd53a3755163333ebc4f5",
+        "original_sha256":  "8cffe86771058f8bbc57faf87d87e8e38113be7cfcdd5fa3e3809729b894062c"
+    },
+    {
+        "path":  "src/app/layout.tsx",
+        "sha256":  "feb1f4d1f7a52f97d0387ade971ba8efc9ccf84a34b92959b75d1f905cadb876",
+        "original_sha256":  "df1e17b1a93dd7732f218cab1bb1835c32236d20e71f2a2dc40f3bebd44cd777"
+    },
+    {
+        "path":  "src/app/page.tsx",
+        "sha256":  "50f57193cdd2eda64751e7d862ea6d48df25e7a78e257d5cda0ae790cd745e0a",
+        "original_sha256":  "daea74a802d8ae7af1aa47668c56a15e2fe7a7f334e68cf59ab9062cc3ae1c05"
+    },
+    {
+        "path":  "src/app/work/aara/page.tsx",
+        "sha256":  "1adde5109eb72cdbdcf4a1f62aadc410048295a315d0f034bd3d777b60c1c696",
+        "original_sha256":  "731a368cd60242e05588d7e86400a55c115f7582291f75583ebc495ddd480475"
+    },
+    {
+        "path":  "src/app/work/careconnect/page.tsx",
+        "sha256":  "10b5a52b4db73cd62ce253e4647502bce86296d2663aa656ba735887f1b3902f",
+        "original_sha256":  "51759824213ac06d425620c44a7f308e8f2b3e8290a603904c1c11432453c50c"
+    },
+    {
+        "path":  "src/app/work/logo-folio/page.tsx",
+        "sha256":  "8b17af143875ce402543d96b8d3053aebd5f5eb84c51b6e25d7512897a1dd2be",
+        "original_sha256":  "7246c8cf5bc6f0f9c2b1c86a8284df2c8e713791685bc80d8cdd7933f21e3d13"
+    },
+    {
+        "path":  "src/app/work/no-cheat-progelato/page.tsx",
+        "sha256":  "39b6b0e80822b95e5ace3948778fe005c1e8ebb50b1b3a624b03dd01ae97df2c",
+        "original_sha256":  "e2d357bab91111d9214801fb99c4faf420c35b7151c219e38aac2932053e3319"
+    },
+    {
+        "path":  "src/components/home/AboutMarquee.tsx",
+        "sha256":  "784a25e09f3b853142cfd259dc24769e27bab44e396ed40301222747640b7e37",
+        "original_sha256":  "62fbfd075d8ecab1c4613f47cc02c40fb1e3ff9aa4f6537f07d58a0f6da1c7bf"
+    },
+    {
+        "path":  "src/components/home/AboutSection.tsx",
+        "sha256":  "65e9dd89c96216ea9a6b7f7b91cef89fe4902b82d6e211ee6e4b30ce3b0b3cc3",
+        "original_sha256":  "0245e35fae7775cb6e95a0dcac90665f8c51fbd7537601ec4982a6a427db9bba"
+    },
+    {
+        "path":  "src/components/home/AnimatedHeroCharacter.tsx",
+        "sha256":  "0ca57de2d8e346890133aec6d99ce4a347f0b399970650c3026e09e0c363861f",
+        "original_sha256":  "f32ad6732ab3a6b6930ba98dab357ea5a896d85c419193e5b1d72af6a62e6b99"
+    },
+    {
+        "path":  "src/components/home/ChapterIntro.tsx",
+        "sha256":  "531df1b740911a87939c5fb23ae79fa633ab92f843563cd85d23ccbd9d5f2c51",
+        "original_sha256":  "d54d8d2c11f999e468e62a35ae492f93fa3b805956e323d95b0b24f0d3557026"
+    },
+    {
+        "path":  "src/components/home/ContactSection.tsx",
+        "sha256":  "a64b7d776c14184c98b318513407dd9327af5485342a3676a6849b5920112fdf",
+        "original_sha256":  "d73b0f449a760950498dda415643a81d45ce9b9b9c22e44b8d27fcc6647ff7b2"
+    },
+    {
+        "path":  "src/components/home/ExperienceSection.tsx",
+        "sha256":  "240cf1ff4e6f5e244c6d41f6f1547499b0d74c9c04a1b6266c121c8f7b26d3a5",
+        "original_sha256":  "cf62349212b571c77590929a035abf58b24674e03a0f8625a66926c8a11794af"
+    },
+    {
+        "path":  "src/components/home/HeroSection.tsx",
+        "sha256":  "60fa7a76d318dfcc7a28d03ea4d274d8bfd026d70d8c436c2d862cc4b0b6db0b",
+        "original_sha256":  "82c5d9028bc03302fc2f03816166facc49463b7c9b1846346216fca97cd3f22d"
+    },
+    {
+        "path":  "src/components/home/ProcessSection.tsx",
+        "sha256":  "681bc4dce1adb1a7bedcf026726d94146c11855bd39f614b173ea4f353221009",
+        "original_sha256":  "eb4fe58b6a59d3d7f7ec12d7b745bc92602cc5c28192c3610b4552521f08b232"
+    },
+    {
+        "path":  "src/components/home/SelectedWorkSection.tsx",
+        "sha256":  "4c8efd18b88a0ca88bdba0b75e2bd774f227d9213cc56b4df2542b1697b677bd",
+        "original_sha256":  "a881d29c83648ce6851fe7c76e5042c5dab3c7dc75eb6434b2f2d056c7a50162"
+    },
+    {
+        "path":  "src/components/home/ServicesSection.tsx",
+        "sha256":  "5ef22a75e69eddcfd94b1317cb6e6603d5fd71f7c970371de2034b16e8601be9",
+        "original_sha256":  "758ebfda1518caae7acfc685d87c9847c3d7c7c1f1e38b45c1aeed74cc17a263"
+    },
+    {
+        "path":  "src/components/layout/Footer.tsx",
+        "sha256":  "eb8193709d716f24101ec3f1d24f0cfc9ff96de4dea60ebafa3cbd991ebe2329",
+        "original_sha256":  "65a90cc5ed763bed6025fe628d6cfb9f18376265c2279691bf85e7dd65c0a1ff"
+    },
+    {
+        "path":  "src/components/layout/HeaderNav.tsx",
+        "sha256":  "9112b8b60aff3f911d7d02d23a258ee65fc0ab77232ea341c82e505a78c95eb8",
+        "original_sha256":  "c4db162416dff7faeb9721953880adce7f9db5d2a2ed899fb39ea3d8b87656c8"
+    },
+    {
+        "path":  "src/components/shared/CustomCursor.tsx",
+        "sha256":  "83bf04a4c0e03e765fdb0dfd2a2ea56160861c19a9f509285df74adc933271bb",
+        "original_sha256":  "9886c67c9e5a5a47a65d41a86a0537cc2eb3bf7269550f9e5b26a57f7fe15f9b"
+    },
+    {
+        "path":  "src/components/studio/AaraRitual.tsx",
+        "sha256":  "ceda3a252101b7b74a54b9dc38fd8b32fce61c7b8a27cb4f8d68ff97045d2ae0",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/ArtworkReveal.tsx",
+        "sha256":  "6d5f5472d17af28c91479af058d193e81ac650dc418e1a6f73c6a1a79c24feb7",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/BrandExplorer.tsx",
+        "sha256":  "e2d80e7c8bf6d0493936067e30511c8f7fe74040310e988a451648af83abe3ef",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/CareDemo.tsx",
+        "sha256":  "57a02bcb0d7696c362b85fa4cee02ce6914c9f20c81543789eb0f166edd0e793",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/CaseSummary.tsx",
+        "sha256":  "14499a784e2268420183e32c399a96b2ca554966907b48b278f7cad420b0455f",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/PackagingShelf.tsx",
+        "sha256":  "d3c9de560fee9b4c75aff973fdbad13bf181e4dfcaffef332be790b691099adc",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/ProjectIndex.tsx",
+        "sha256":  "8edba3891ea038dff6f0e62dfea69af3dc588d8c4412f1960d41d9fc97f77659",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/SiteExperience.tsx",
+        "sha256":  "636b713ae3f9ffd64c557f24839119636534cfeb2323ba324aa5dd934e43c37d",
+        "original_sha256":  null
+    },
+    {
+        "path":  "src/components/studio/StudioSection.tsx",
+        "sha256":  "5487d1b04f689b5d16111c5c6852afb73663e0d6f2d36ec2e99a46541275b411",
+        "original_sha256":  null
+    },
+    {
+        "path":  "public/projects/careconnect/prototype/index.html",
+        "sha256":  "5a2dc3ef2c321337d122cd733b0be59478cf8dda6221bf1bf7fb2d4deabbd2cc",
+        "original_sha256":  "441b3904b9d1b270f9bb88d362bb7584e9229cc3591296ffc272dd0ce99c4a6e"
+    }
+]

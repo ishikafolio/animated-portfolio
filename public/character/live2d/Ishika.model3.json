@@ -1,0 +1,48 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "Ishika.moc3",
+    "Textures": [
+      "Ishika.2048/texture_00.png"
+    ],
+    "Physics": "Ishika.physics3.json",
+    "DisplayInfo": "Ishika.cdi3.json",
+    "Expressions": [
+      {
+        "Name": "Neutral",
+        "File": "expressions/neutral.exp3.json"
+      },
+      {
+        "Name": "Happy",
+        "File": "expressions/happy.exp3.json"
+      },
+      {
+        "Name": "Curious",
+        "File": "expressions/curious.exp3.json"
+      },
+      {
+        "Name": "Surprised",
+        "File": "expressions/surprised.exp3.json"
+      },
+      {
+        "Name": "Thoughtful",
+        "File": "expressions/thoughtful.exp3.json"
+      }
+    ]
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ]
+}
