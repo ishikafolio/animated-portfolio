@@ -292,30 +292,48 @@ export default function FlyerDesignChapter() {
         tl.to({}, { duration: 0.08 }, 0.92);
       });
 
-      // MOBILE: Natural horizontal swipeable track, gentle scroll entrance
+      // MOBILE: Natural horizontal swipeable track, paper-inspired mask reveal & gentle scroll entrance
       mm.add("(max-width: 1023px)", () => {
-        if (heroOpeningRef.current) {
-          gsap.fromTo(
-            heroOpeningRef.current,
-            { opacity: 0.6, y: 25 },
-            {
-              opacity: 1,
-              y: 0,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: heroOpeningRef.current,
-                start: "top 85%",
-                end: "top 55%",
-                scrub: 0.5,
-              },
-            }
+        const mobileHeroTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: heroOpeningRef.current,
+            start: "top 80%",
+            end: "top 25%",
+            scrub: 0.6,
+          },
+        });
+
+        if (titleWordRef.current) {
+          mobileHeroTl.fromTo(
+            titleWordRef.current,
+            { y: 25, opacity: 0.25 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0
+          );
+        }
+
+        if (paperMaskRef.current) {
+          mobileHeroTl.fromTo(
+            paperMaskRef.current,
+            { clipPath: "inset(12% 16% 12% 16% round 16px)", opacity: 0.7 },
+            { clipPath: "inset(0% 0% 0% 0% round 0px)", opacity: 1, ease: "power2.out", duration: 0.5 },
+            0.05
+          );
+        }
+
+        if (heroImageRef.current) {
+          mobileHeroTl.fromTo(
+            heroImageRef.current,
+            { scale: 1.06, y: 20 },
+            { scale: 1.0, y: 0, ease: "power2.out", duration: 0.5 },
+            0.05
           );
         }
 
         if (trackRef.current) {
           gsap.fromTo(
             trackRef.current,
-            { opacity: 0.8, y: 20 },
+            { opacity: 0.75, y: 35 },
             {
               opacity: 1,
               y: 0,
@@ -323,8 +341,8 @@ export default function FlyerDesignChapter() {
               scrollTrigger: {
                 trigger: trackRef.current,
                 start: "top 85%",
-                end: "top 60%",
-                scrub: 0.5,
+                end: "top 50%",
+                scrub: 0.6,
               },
             }
           );
@@ -347,7 +365,7 @@ export default function FlyerDesignChapter() {
           ========================================================================= */}
       <div
         ref={stageRef}
-        className="w-full min-h-screen lg:h-screen lg:sticky lg:top-0 overflow-hidden flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-6 lg:px-8 max-w-full"
+        className="w-full min-h-screen lg:h-screen lg:sticky lg:top-0 lg:overflow-hidden overflow-visible flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-6 lg:px-8 max-w-full"
       >
         {/* TOP HEADER & CONTROLS */}
         <header className="relative z-30 flex items-center justify-between gap-4 pb-3 border-b border-white/15 font-mono text-[11px] sm:text-xs tracking-wider uppercase max-w-7xl mx-auto w-full shrink-0">
@@ -375,7 +393,7 @@ export default function FlyerDesignChapter() {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous flyer"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95"
+                className="w-10 h-10 sm:w-8 sm:h-8 min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer"
               >
                 <ArrowLeft size={14} />
               </button>
@@ -383,7 +401,7 @@ export default function FlyerDesignChapter() {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next flyer"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95"
+                className="w-10 h-10 sm:w-8 sm:h-8 min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer"
               >
                 <ArrowRight size={14} />
               </button>
@@ -448,13 +466,13 @@ export default function FlyerDesignChapter() {
         >
           <div
             ref={trackRef}
-            className="flex flex-row items-center gap-6 sm:gap-10 lg:gap-14 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-none touch-pan-x px-4 sm:px-8 lg:px-12 will-change-transform"
+            className="flex flex-row items-center gap-6 sm:gap-10 lg:gap-14 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-none touch-pan-x touch-pan-y px-4 sm:px-8 lg:px-12 will-change-transform"
           >
             {FLYERS.map((f, index) => (
               <article
                 key={f.id}
                 id={`flyer-${f.id}`}
-                className={`shrink-0 snap-center w-[85vw] sm:w-[75vw] lg:w-[54vw] max-w-[780px] rounded-3xl bg-[#1A1616] border border-white/15 p-5 sm:p-7 lg:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between transition-transform duration-300 ${f.staggerOffset}`}
+                className={`shrink-0 snap-center w-[85vw] sm:w-[75vw] lg:w-[54vw] max-w-[780px] h-auto lg:max-h-[min(540px,calc(100vh-var(--nav-height,64px)-120px))] rounded-2xl sm:rounded-3xl bg-[#1A1616] border border-white/15 p-4 sm:p-7 lg:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between transition-transform duration-300 lg:${f.staggerOffset}`}
                 aria-label={`${f.client}: ${f.title}`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">

@@ -331,30 +331,48 @@ export default function AiCreativesChapter() {
         tl.to({}, { duration: 0.08 }, 0.92);
       });
 
-      // MOBILE: Natural horizontal swipeable track, gentle scroll entrance
+      // MOBILE: Natural horizontal swipeable track, depth aperture mask reveal & gentle scroll entrance
       mm.add("(max-width: 1023px)", () => {
-        if (heroOpeningRef.current) {
-          gsap.fromTo(
-            heroOpeningRef.current,
-            { opacity: 0.6, y: 25 },
-            {
-              opacity: 1,
-              y: 0,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: heroOpeningRef.current,
-                start: "top 85%",
-                end: "top 55%",
-                scrub: 0.5,
-              },
-            }
+        const mobileHeroTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: heroOpeningRef.current,
+            start: "top 80%",
+            end: "top 25%",
+            scrub: 0.6,
+          },
+        });
+
+        if (titleWordRef.current) {
+          mobileHeroTl.fromTo(
+            titleWordRef.current,
+            { y: 25, opacity: 0.25 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0
+          );
+        }
+
+        if (depthApertureRef.current) {
+          mobileHeroTl.fromTo(
+            depthApertureRef.current,
+            { clipPath: "circle(32% at 50% 50%)", opacity: 0.7 },
+            { clipPath: "circle(78% at 50% 50%)", opacity: 1, ease: "power2.out", duration: 0.5 },
+            0.05
+          );
+        }
+
+        if (heroImageRef.current) {
+          mobileHeroTl.fromTo(
+            heroImageRef.current,
+            { scale: 1.08, y: 15 },
+            { scale: 1.0, y: 0, ease: "power2.out", duration: 0.5 },
+            0.05
           );
         }
 
         if (trackRef.current) {
           gsap.fromTo(
             trackRef.current,
-            { opacity: 0.8, y: 20 },
+            { opacity: 0.75, y: 35 },
             {
               opacity: 1,
               y: 0,
@@ -362,8 +380,8 @@ export default function AiCreativesChapter() {
               scrollTrigger: {
                 trigger: trackRef.current,
                 start: "top 85%",
-                end: "top 60%",
-                scrub: 0.5,
+                end: "top 50%",
+                scrub: 0.6,
               },
             }
           );
@@ -386,7 +404,7 @@ export default function AiCreativesChapter() {
           ========================================================================= */}
       <div
         ref={stageRef}
-        className="w-full min-h-screen lg:h-screen lg:sticky lg:top-0 overflow-hidden flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-6 lg:px-8 max-w-full"
+        className="w-full min-h-screen lg:h-screen lg:sticky lg:top-0 lg:overflow-hidden overflow-visible flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-6 lg:px-8 max-w-full"
       >
         {/* TOP HEADER & CONTROLS */}
         <header className="relative z-30 flex items-center justify-between gap-4 pb-3 border-b border-white/15 font-mono text-[11px] sm:text-xs tracking-wider uppercase max-w-7xl mx-auto w-full shrink-0">
@@ -419,7 +437,7 @@ export default function AiCreativesChapter() {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous world"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95"
+                className="w-10 h-10 sm:w-8 sm:h-8 min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer"
               >
                 <ArrowLeft size={14} />
               </button>
@@ -427,7 +445,7 @@ export default function AiCreativesChapter() {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next world"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95"
+                className="w-10 h-10 sm:w-8 sm:h-8 min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 rounded-full bg-white/5 hover:bg-white/15 border border-white/15 flex items-center justify-center text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer"
               >
                 <ArrowRight size={14} />
               </button>
@@ -492,10 +510,10 @@ export default function AiCreativesChapter() {
         >
           <div
             ref={trackRef}
-            className="flex flex-row items-center gap-6 sm:gap-10 lg:gap-12 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-none touch-pan-x px-4 sm:px-8 lg:px-12 will-change-transform"
+            className="flex flex-row items-center gap-6 sm:gap-10 lg:gap-12 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-none touch-pan-x touch-pan-y px-4 sm:px-8 lg:px-12 will-change-transform"
           >
             {/* SERIES 01 ANCHOR PILLAR */}
-            <div className="shrink-0 snap-start w-[50vw] sm:w-[35vw] lg:w-[22vw] max-w-[320px] rounded-3xl bg-[#0F1626]/80 border border-[#00E5FF]/30 p-6 flex flex-col justify-between shadow-xl">
+            <div className="shrink-0 snap-start w-[50vw] sm:w-[35vw] lg:w-[22vw] max-w-[320px] rounded-2xl sm:rounded-3xl bg-[#0F1626]/80 border border-[#00E5FF]/30 p-4 sm:p-6 flex flex-col justify-between shadow-xl">
               <div>
                 <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#00E5FF]">
                   <Mountain size={16} />
@@ -520,7 +538,7 @@ export default function AiCreativesChapter() {
                 <React.Fragment key={w.id}>
                   {/* SERIES 02 DIVIDER PILLAR INSERTED BEFORE WORLD 04 */}
                   {isFirstOfSeries2 && (
-                    <div className="shrink-0 snap-start w-[50vw] sm:w-[35vw] lg:w-[22vw] max-w-[320px] rounded-3xl bg-[#140F26]/80 border border-[#9B87F5]/30 p-6 flex flex-col justify-between shadow-xl">
+                    <div className="shrink-0 snap-start w-[50vw] sm:w-[35vw] lg:w-[22vw] max-w-[320px] rounded-2xl sm:rounded-3xl bg-[#140F26]/80 border border-[#9B87F5]/30 p-4 sm:p-6 flex flex-col justify-between shadow-xl">
                       <div>
                         <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#9B87F5]">
                           <Cpu size={16} />
@@ -541,7 +559,7 @@ export default function AiCreativesChapter() {
 
                   <article
                     id={`world-${w.id}`}
-                    className="shrink-0 snap-center w-[85vw] sm:w-[75vw] lg:w-[60vw] max-w-[820px] rounded-3xl bg-[#0B0F17] border border-white/15 p-5 sm:p-7 lg:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between"
+                    className="shrink-0 snap-center w-[85vw] sm:w-[75vw] lg:w-[60vw] max-w-[820px] h-auto lg:max-h-[min(540px,calc(100vh-var(--nav-height,64px)-120px))] rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/15 p-4 sm:p-7 lg:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between"
                     aria-label={`${w.title} — ${w.subtitle}`}
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">

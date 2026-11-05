@@ -220,68 +220,49 @@ export default function PackagingChapter() {
 
       // =========================================================================
       // MOBILE: Gentle, Unpinned Scroll Transitions (Native Touch Scrolling)
-      // Shorter cinematic entrances for Stage 1 (Hero/Progelato) and Stage 2 (Aara)
+      // Dedicated aperture reveal for Stage 1 (Podium Hero) and smooth transitions into Progelato & Aara
       // =========================================================================
       mm.add("(max-width: 1023px)", () => {
-        // Stage 1: Hero & Progelato Entrance
+        const mobileHeroTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top 80%",
+            end: "top 25%",
+            scrub: 0.6,
+          },
+        });
+
         if (heroHeadingMobileRef.current) {
-          gsap.fromTo(
+          mobileHeroTl.fromTo(
             heroHeadingMobileRef.current,
-            { y: 15, opacity: 0.5 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: heroHeadingMobileRef.current,
-                start: "top 85%",
-                end: "top 55%",
-                scrub: 0.5,
-              },
-            }
+            { y: 25, opacity: 0.25 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0
           );
         }
 
         if (heroSceneRef.current) {
-          gsap.fromTo(
+          mobileHeroTl.fromTo(
             heroSceneRef.current,
-            { scale: 0.96, opacity: 0.85 },
-            {
-              scale: 1.02,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: heroSceneRef.current,
-                start: "top 85%",
-                end: "bottom 40%",
-                scrub: 0.5,
-              },
-            }
+            { clipPath: "circle(34% at 50% 50%)", scale: 0.96 },
+            { clipPath: "circle(76% at 50% 50%)", scale: 1.0, ease: "power2.out", duration: 0.5 },
+            0.05
           );
         }
 
         if (heroLinksRef.current) {
-          gsap.fromTo(
+          mobileHeroTl.fromTo(
             heroLinksRef.current,
-            { y: 15, opacity: 0.6 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: heroLinksRef.current,
-                start: "top 90%",
-                end: "bottom 60%",
-                scrub: 0.5,
-              },
-            }
+            { y: 20, opacity: 0.4 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0.15
           );
         }
 
         if (progelatoExplorerRef.current) {
           gsap.fromTo(
             progelatoExplorerRef.current,
-            { y: 25, opacity: 0.7 },
+            { y: 35, opacity: 0.65 },
             {
               y: 0,
               opacity: 1,
@@ -289,8 +270,8 @@ export default function PackagingChapter() {
               scrollTrigger: {
                 trigger: progelatoExplorerRef.current,
                 start: "top 85%",
-                end: "top 35%",
-                scrub: 0.5,
+                end: "top 40%",
+                scrub: 0.6,
               },
             }
           );
@@ -298,7 +279,7 @@ export default function PackagingChapter() {
 
         // -----------------------------------------------------------------
         // 03B AARA SHOWCASE DIRECT SCROLL TRANSITION (MOBILE)
-        // Same effect with less movement, native touch scrolling
+        // Background blend, header and arched frame reveal
         // -----------------------------------------------------------------
         if (aaraShowcaseRef.current) {
           gsap.fromTo(
@@ -337,7 +318,7 @@ export default function PackagingChapter() {
           if (heading) {
             gsap.fromTo(
               heading,
-              { y: 16, opacity: 0.9 },
+              { y: 25, opacity: 0.6 },
               {
                 y: 0,
                 opacity: 1,
@@ -346,7 +327,7 @@ export default function PackagingChapter() {
                   trigger: aaraShowcaseRef.current,
                   start: "top 85%",
                   end: "top 50%",
-                  scrub: 0.5,
+                  scrub: 0.6,
                 },
               }
             );
@@ -356,16 +337,17 @@ export default function PackagingChapter() {
           if (artwork.length > 0) {
             gsap.fromTo(
               artwork,
-              { y: 18, opacity: 0.9 },
+              { y: 30, scale: 0.95, opacity: 0.7 },
               {
                 y: 0,
+                scale: 1.0,
                 opacity: 1,
                 ease: "power2.out",
                 scrollTrigger: {
                   trigger: aaraShowcaseRef.current,
                   start: "top 85%",
                   end: "top 50%",
-                  scrub: 0.5,
+                  scrub: 0.6,
                 },
               }
             );
@@ -392,7 +374,7 @@ export default function PackagingChapter() {
           ========================================================================= */}
       <div
         ref={stageRef}
-        className={`packaging-stage relative w-full ${reducedMotion ? "min-h-0" : "min-h-screen lg:h-screen lg:sticky lg:top-0"} overflow-hidden flex flex-col justify-between p-4 sm:p-6 lg:p-8 text-[#F4EEE5] select-none`}
+        className={`packaging-stage relative w-full ${reducedMotion ? "min-h-0" : "min-h-screen lg:h-screen lg:sticky lg:top-0"} lg:overflow-hidden overflow-visible flex flex-col justify-between p-4 sm:p-6 lg:p-8 text-[#F4EEE5] select-none`}
         style={{
           background:
             "radial-gradient(circle at 50% 45%, rgba(18, 30, 22, 0.95) 0%, rgba(12, 20, 14, 1) 100%)",
@@ -633,7 +615,7 @@ export default function PackagingChapter() {
                   key={f.id}
                   onClick={() => setFlavourIndex(i)}
                   aria-pressed={flavourIndex === i}
-                  className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium transition-all text-left ${
+                  className={`flex items-center justify-between px-3.5 py-2.5 sm:py-1.5 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-medium transition-all text-left cursor-pointer ${
                     flavourIndex === i
                       ? "bg-zinc-100 text-[#24121B] font-semibold border-l-4"
                       : "text-zinc-600 hover:bg-zinc-50 border-l-4 border-transparent"
@@ -653,7 +635,7 @@ export default function PackagingChapter() {
 
             <Link
               href="/work/no-cheat-progelato"
-              className="inline-flex items-center gap-2 text-[#890149] hover:underline font-medium text-xs pt-2.5 border-t border-zinc-200 w-full justify-between group"
+              className="inline-flex items-center gap-2 text-[#890149] hover:underline font-medium text-xs pt-2.5 border-t border-zinc-200 w-full justify-between group min-h-[44px] sm:min-h-0 py-2 sm:py-0"
             >
               <span>Explore full Progelato case study</span>
               <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -681,7 +663,7 @@ export default function PackagingChapter() {
                         setFlavourIndex(idx);
                       }
                     }}
-                    className={`px-2.5 py-1 rounded-xl font-mono text-[11px] transition-all cursor-pointer flex items-center gap-1.5 ${
+                    className={`px-3 py-2 sm:px-2.5 sm:py-1 min-h-[44px] sm:min-h-[32px] rounded-xl font-mono text-xs sm:text-[11px] transition-all cursor-pointer flex items-center gap-1.5 ${
                       isSelected
                         ? "bg-[#890149] text-white shadow-md ring-2 ring-[#F6D06F]/50 border border-[#F6D06F]"
                         : "bg-white/10 text-white/80 hover:bg-white/20 border border-white/10"

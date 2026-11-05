@@ -305,33 +305,42 @@ export default function UiUxChapter() {
         }
       });
 
-      // MOBILE: Flow naturally with subtle scroll entrance & full prototype interactivity
+      // MOBILE: Dedicated opening aperture reveal & interactive prototype entrance
       mm.add("(max-width: 1023px)", () => {
         isInteractiveRef.current = true;
         setIsInteractive(true);
 
+        const mobileTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 0.6,
+          },
+        });
+
         if (mobileTitleRef.current) {
-          gsap.fromTo(
+          mobileTl.fromTo(
             mobileTitleRef.current,
-            { y: 15, opacity: 0.5 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: mobileTitleRef.current,
-                start: "top 85%",
-                end: "top 55%",
-                scrub: 0.5,
-              },
-            }
+            { y: 25, opacity: 0.25 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0
+          );
+        }
+
+        if (heroApertureRef.current) {
+          mobileTl.fromTo(
+            heroApertureRef.current,
+            { clipPath: "circle(34% at 50% 50%)", scale: 0.96 },
+            { clipPath: "circle(76% at 50% 50%)", scale: 1.0, ease: "power2.out", duration: 0.5 },
+            0.05
           );
         }
 
         if (demoNotesRef.current) {
           gsap.fromTo(
             demoNotesRef.current,
-            { y: 20, opacity: 0.7 },
+            { y: 35, opacity: 0.6 },
             {
               y: 0,
               opacity: 1,
@@ -340,7 +349,7 @@ export default function UiUxChapter() {
                 trigger: demoNotesRef.current,
                 start: "top 85%",
                 end: "top 45%",
-                scrub: 0.5,
+                scrub: 0.6,
               },
             }
           );
@@ -349,16 +358,17 @@ export default function UiUxChapter() {
         if (phoneContainerRef.current) {
           gsap.fromTo(
             phoneContainerRef.current,
-            { scale: 0.96, opacity: 0.8 },
+            { scale: 0.94, opacity: 0.7, y: 30 },
             {
               scale: 1.0,
               opacity: 1,
+              y: 0,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: phoneContainerRef.current,
                 start: "top 85%",
                 end: "top 45%",
-                scrub: 0.5,
+                scrub: 0.6,
               },
             }
           );
@@ -382,7 +392,7 @@ export default function UiUxChapter() {
       {/* PINNED STAGE (Sticky on desktop, natural flow on mobile) */}
       <div
         ref={stageRef}
-        className="uiux-stage w-full min-h-screen lg:h-screen lg:sticky lg:top-0 overflow-hidden flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-2.5 px-4 sm:px-8 lg:px-12 text-[#F3F3E7] select-none"
+        className="uiux-stage w-full min-h-screen lg:h-screen lg:sticky lg:top-0 lg:overflow-hidden overflow-visible flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 lg:pb-2.5 px-4 sm:px-8 lg:px-12 text-[#F3F3E7] select-none"
         style={{
           background:
             "radial-gradient(circle at 75% 30%, rgba(81, 70, 166, 0.4) 0%, rgba(19, 18, 36, 0.98) 72%)",
@@ -450,11 +460,11 @@ export default function UiUxChapter() {
           {/* BEAT 1 & 2: CARECONNECT LUMINOUS CARE CONSTELLATION HERO ARTWORK */}
           <div
             ref={heroConstellationRef}
-            className="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+            className="relative lg:absolute lg:inset-0 w-full mb-8 lg:mb-0 flex items-center justify-center pointer-events-none z-20"
           >
             <div
               ref={heroApertureRef}
-              className="relative w-[92%] max-w-5xl aspect-[16/9] rounded-3xl overflow-hidden border border-[#9B87F5]/40 shadow-[0_0_80px_rgba(155,135,245,0.35)] bg-[#110F20]"
+              className="relative w-full lg:w-[92%] max-w-5xl aspect-[16/10] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#9B87F5]/40 shadow-[0_0_80px_rgba(155,135,245,0.35)] bg-[#110F20]"
               style={{ clipPath: "circle(60% at 50% 50%)" }}
             >
               <Image
@@ -570,7 +580,7 @@ export default function UiUxChapter() {
             {/* LEFT COLUMN: LIVE PROJECT CONTROLS & EXPLANATION */}
             <div
               ref={demoNotesRef}
-              className="w-full lg:w-[420px] xl:w-[460px] z-20 text-[#25304A] bg-[#FAF8FC] p-5 sm:p-6 rounded-2xl shadow-xl border border-white/40 flex flex-col justify-center shrink-0"
+              className="w-full lg:w-[420px] xl:w-[460px] z-20 text-[#25304A] bg-[#FAF8FC] p-4 sm:p-6 rounded-2xl shadow-xl border border-white/40 flex flex-col justify-center shrink-0"
             >
               <p className="font-mono text-[10px] sm:text-[11px] font-semibold tracking-wider text-[#5146A6] uppercase mb-1">
                 A little care, in action
@@ -592,7 +602,7 @@ export default function UiUxChapter() {
                       setTask(i);
                       setAttempted(false);
                     }}
-                    className={`flex items-center justify-between px-3 py-1.5 sm:py-2 rounded-xl border transition-all text-left font-medium text-xs sm:text-sm min-h-[36px] sm:min-h-[38px] ${
+                    className={`flex items-center justify-between px-3.5 py-2.5 sm:py-2 rounded-xl border transition-all text-left font-medium text-xs sm:text-sm min-h-[44px] sm:min-h-[38px] cursor-pointer ${
                       task === i
                         ? "bg-[#5146A6] text-white border-[#5146A6] shadow-sm font-semibold"
                         : "bg-white text-[#25304A] border-zinc-200 hover:border-[#5146A6]/40"
@@ -616,9 +626,9 @@ export default function UiUxChapter() {
                 <p className="text-[11px] sm:text-xs text-[#5D5A75] leading-snug">{current.note}</p>
               </div>
 
-              <div className="flex items-center gap-4 text-xs font-semibold mt-0.5">
+              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold mt-1">
                 <button
-                  className="inline-flex items-center gap-1.5 text-[#5146A6] hover:underline cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-[#5146A6] hover:underline cursor-pointer min-h-[44px] sm:min-h-0 py-2 sm:py-0"
                   onClick={() => {
                     setReset((v) => v + 1);
                     setAttempted(false);
@@ -627,7 +637,7 @@ export default function UiUxChapter() {
                   <RotateCcw size={13} /> Reset this task
                 </button>
                 <a
-                  className="inline-flex items-center gap-1.5 text-[#5146A6] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-[#5146A6] hover:underline min-h-[44px] sm:min-h-0 py-2 sm:py-0"
                   href="/projects/careconnect/prototype/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -637,13 +647,13 @@ export default function UiUxChapter() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: FOCAL CENTRAL PHONE (Sized by available viewport height) */}
+            {/* RIGHT COLUMN: FOCAL CENTRAL PHONE (Sized by available viewport height on desktop, naturally fluid on mobile) */}
             <div
               ref={phoneContainerRef}
-              className="care-phone-wrap relative z-30 flex flex-col items-center justify-center pointer-events-auto shrink-0 my-auto"
+              className="care-phone-wrap relative z-30 flex flex-col items-center justify-center pointer-events-auto shrink-0 my-auto w-full lg:w-auto"
             >
               <div
-                className={`care-phone relative h-[min(460px,calc(100vh-var(--nav-height,64px)-140px))] max-h-[480px] min-h-[320px] w-auto aspect-[390/844] rounded-[28px] sm:rounded-[32px] border-[5px] sm:border-[6px] border-[#2C2840] shadow-2xl bg-[#FAF8F5] overflow-hidden ${
+                className={`care-phone relative w-full max-w-[310px] sm:max-w-[340px] aspect-[390/844] h-auto lg:h-[min(460px,calc(100vh-var(--nav-height,64px)-140px))] lg:max-h-[480px] lg:w-auto rounded-[28px] sm:rounded-[32px] border-[5px] sm:border-[6px] border-[#2C2840] shadow-2xl bg-[#FAF8F5] overflow-hidden ${
                   isInteractive ? "pointer-events-auto" : "pointer-events-none"
                 }`}
               >
@@ -665,11 +675,11 @@ export default function UiUxChapter() {
         </div>
 
         {/* CASE-STUDY LINK ROW & METADATA FOOTER (Clear of phone & Pause Motion button) */}
-        <footer className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-2.5 pt-2 pb-1 border-t border-white/10 font-mono text-xs text-white/60 shrink-0">
+        <footer className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 sm:pt-2 pb-6 sm:pb-1 border-t border-white/10 font-mono text-xs text-white/60 shrink-0">
           <Link
             id="showcase-uiux"
             href="/work/careconnect"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#5146A6]/20 hover:bg-[#5146A6]/40 border border-[#9B87F5]/30 hover:border-[#9B87F5]/70 text-[#ECE9FB] hover:text-white font-semibold text-xs tracking-wider transition-all shadow-md group shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2.5 sm:py-1.5 rounded-xl bg-[#5146A6]/20 hover:bg-[#5146A6]/40 border border-[#9B87F5]/30 hover:border-[#9B87F5]/70 text-[#ECE9FB] hover:text-white font-semibold text-xs tracking-wider transition-all shadow-md group shrink-0 min-h-[44px] sm:min-h-0"
           >
             <span>The full CareConnect case study</span>
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

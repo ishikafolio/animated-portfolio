@@ -64,7 +64,7 @@ export default function AaraRitual({
       {/* =========================================================================
           MOBILE HEADING (Visible only on < lg, establishes chapter entrance)
           ========================================================================= */}
-      <div className="flex lg:hidden flex-col w-full max-w-full min-w-0 mb-4 px-1">
+      <div className="ritual-header-wrap flex lg:hidden flex-col w-full max-w-full min-w-0 mb-4 px-1">
         <div className="flex items-center gap-2 mb-1.5 font-mono text-xs text-[#8EB897] uppercase tracking-widest font-semibold">
           <span className="w-2 h-2 rounded-full bg-[#8EB897] animate-pulse" />
           <span>03B / PACKAGING DESIGN</span>
@@ -131,7 +131,7 @@ export default function AaraRitual({
         {/* RIGHT COLUMN (Desktop): HEADINGS, TABS, DETAILS & ACTIONS */}
         <div className="lg:col-span-6 w-full flex flex-col justify-center min-w-0">
           {/* DESKTOP HEADING (Hidden on mobile to avoid duplication) */}
-          <div className="hidden lg:flex flex-col mb-2.5">
+          <div className="ritual-header-wrap hidden lg:flex flex-col mb-2.5">
             <div className="flex items-center gap-2 mb-1 font-mono text-xs text-[#8EB897] uppercase tracking-widest font-semibold">
               <span className="w-2 h-2 rounded-full bg-[#8EB897] animate-pulse" />
               <span>03B / PACKAGING DESIGN</span>
@@ -150,7 +150,7 @@ export default function AaraRitual({
             </p>
           </div>
 
-          {/* FIVE COLLECTION TABS (Wrap comfortably into rows, comfortable 36px tap targets) */}
+          {/* FIVE COLLECTION TABS (Wrap comfortably into rows, accessible touch targets on mobile) */}
           <div
             className="ritual-options flex flex-wrap gap-2 my-1.5 w-full max-w-full min-w-0"
             role="tablist"
@@ -165,7 +165,7 @@ export default function AaraRitual({
                   role="tab"
                   aria-selected={isSelected}
                   onClick={() => setSelected(i)}
-                  className={`min-h-[34px] px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-[#F3F3E7] focus:outline-none shrink-0 ${
+                  className={`min-h-[44px] sm:min-h-[34px] px-4 sm:px-4 py-2 sm:py-1.5 rounded-full text-xs font-mono tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-[#F3F3E7] focus:outline-none shrink-0 cursor-pointer flex items-center justify-center ${
                     isSelected
                       ? "bg-[#F3F3E7] text-[#122219] font-bold shadow-md border border-[#F3F3E7]"
                       : "bg-white/5 text-[#B6C6B8] hover:text-[#F3F3E7] hover:bg-white/10 border border-[#B6C6B8]/40"
@@ -192,7 +192,7 @@ export default function AaraRitual({
 
           {/* QUIET MOMENT INTERACTION BUTTON */}
           <button
-            className="ritual-start min-h-[36px] py-1 border-b border-[#8EB897]/30 flex items-center justify-between text-xs sm:text-sm font-semibold tracking-wide text-[#F3F3E7] hover:text-white transition-colors cursor-pointer w-full max-w-full mt-1.5 focus-visible:ring-2 focus-visible:ring-[#F3F3E7] focus:outline-none"
+            className="ritual-start min-h-[44px] py-2 border-b border-[#8EB897]/30 flex items-center justify-between text-xs sm:text-sm font-semibold tracking-wide text-[#F3F3E7] hover:text-white transition-colors cursor-pointer w-full max-w-full mt-2 focus-visible:ring-2 focus-visible:ring-[#F3F3E7] focus:outline-none"
             aria-pressed={ritual}
             onClick={() => setRitual((v) => !v)}
           >

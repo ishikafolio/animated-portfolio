@@ -8,6 +8,7 @@ import type { CharacterExpressionName } from "@/components/home/Live2DCharacter"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
   (window as any).gsap = gsap;
   (window as any).ScrollTrigger = ScrollTrigger;
 }

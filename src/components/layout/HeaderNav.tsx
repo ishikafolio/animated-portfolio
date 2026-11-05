@@ -232,7 +232,7 @@ export function HeaderNav() {
             ref={menuButton}
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-full border border-[#24121B]/15 text-[#24121B] hover:bg-[#24121B]/5 transition-colors focus-visible:outline-[#890149]"
+            className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center p-2.5 rounded-full border border-[#24121B]/15 text-[#24121B] hover:bg-[#24121B]/5 transition-colors focus-visible:outline-[#890149]"
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
             aria-label={isOpen ? "Close main menu" : "Open main menu"}
@@ -247,7 +247,7 @@ export function HeaderNav() {
         <div
           ref={menuPanel}
           id="mobile-navigation"
-          className="lg:hidden fixed inset-0 top-[60px] bg-[#F3F3E7] z-40 flex flex-col justify-between gap-6 overflow-y-auto px-6 py-6 border-t border-[#24121B]/10"
+          className="lg:hidden fixed inset-0 top-[var(--nav-height,60px)] bg-[#F3F3E7] z-40 flex flex-col justify-between gap-6 overflow-y-auto px-4 sm:px-6 py-6 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] border-t border-[#24121B]/10"
         >
           {/* DISCIPLINE QUICK JUMP SECTION */}
           <div className="flex flex-col gap-3 shrink-0">
@@ -260,7 +260,7 @@ export function HeaderNav() {
                   key={d.num}
                   href={d.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between p-2.5 rounded-xl bg-[#24121B]/5 hover:bg-[#24121B]/10 transition-colors"
+                  className="flex items-center justify-between p-3 min-h-[48px] rounded-xl bg-[#24121B]/5 hover:bg-[#24121B]/10 transition-colors"
                 >
                   <div className="flex flex-col text-left">
                     <span className="font-cubao text-base uppercase text-[#24121B]">
@@ -287,7 +287,7 @@ export function HeaderNav() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-mono text-xs uppercase tracking-wider text-[#24121B] hover:text-[#890149] py-2 px-3 rounded-lg bg-white/50 border border-[#24121B]/5"
+                  className="font-mono text-xs uppercase tracking-wider text-[#24121B] hover:text-[#890149] py-2.5 px-3 min-h-[44px] flex items-center rounded-lg bg-white/50 border border-[#24121B]/5"
                 >
                   {link.label}
                 </Link>
@@ -300,7 +300,7 @@ export function HeaderNav() {
               href="/#contact"
               data-character-mood="Happy"
               onClick={() => setIsOpen(false)}
-              className="w-full py-3.5 text-center rounded-full bg-[#890149] text-[#F3F3E7] font-semibold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-md"
+              className="w-full py-3.5 min-h-[48px] text-center rounded-full bg-[#890149] text-[#F3F3E7] font-semibold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-md active:scale-95"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -175,7 +175,54 @@ export default function BrandIdentityChapter() {
         }
       });
 
-      // Directional curtain reveals for each brand presentation sheet
+      // MOBILE: Native touch sequence with separating vertical curtain panels & board reveal
+      mm.add("(max-width: 1023px)", () => {
+        const mobileTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 0.6,
+          },
+        });
+
+        if (titleWordRef.current) {
+          mobileTl.fromTo(
+            titleWordRef.current,
+            { y: 30, opacity: 0.25 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.3 },
+            0
+          );
+        }
+
+        if (metaBadgeRef.current) {
+          mobileTl.fromTo(
+            metaBadgeRef.current,
+            { y: -15, opacity: 0 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.25 },
+            0.05
+          );
+        }
+
+        // Two vertical panels softly part left and right to reveal lead presentation board
+        if (leftCurtainRef.current) {
+          mobileTl.to(leftCurtainRef.current, { xPercent: -100, ease: "power2.inOut", duration: 0.5 }, 0.05);
+        }
+        if (rightCurtainRef.current) {
+          mobileTl.to(rightCurtainRef.current, { xPercent: 100, ease: "power2.inOut", duration: 0.5 }, 0.05);
+        }
+
+        if (leadBoardRef.current) {
+          mobileTl.fromTo(
+            leadBoardRef.current,
+            { scale: 0.94, opacity: 0.7 },
+            { scale: 1.02, opacity: 1, ease: "power2.out", duration: 0.5 },
+            0.08
+          );
+        }
+      });
+
+      // Directional reveals for each brand presentation sheet on scroll
       const sheets = [
         { ref: earthkindRef, color: "#164740" },
         { ref: veloraLeatherRef, color: "#642D23" },
@@ -187,7 +234,7 @@ export default function BrandIdentityChapter() {
         if (!ref.current) return;
         gsap.fromTo(
           ref.current,
-          { y: 40, opacity: 0.85 },
+          { y: 40, opacity: 0.8 },
           {
             y: 0,
             opacity: 1,
@@ -221,7 +268,7 @@ export default function BrandIdentityChapter() {
           ========================================================================= */}
       <div
         ref={stageRef}
-        className="brand-stage w-full min-h-screen lg:h-screen lg:sticky lg:top-0 overflow-hidden flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-8 lg:px-12 text-[#F4EEE5] select-none"
+        className="brand-stage w-full min-h-screen lg:h-screen lg:sticky lg:top-0 lg:overflow-hidden overflow-visible flex flex-col justify-between pt-[calc(var(--nav-height,64px)+0.75rem)] pb-4 px-4 sm:px-8 lg:px-12 text-[#F4EEE5] select-none"
         style={{
           background: "radial-gradient(circle at 50% 40%, rgba(22, 71, 64, 0.45) 0%, rgba(10, 16, 12, 0.98) 75%)",
         }}
@@ -344,7 +391,7 @@ export default function BrandIdentityChapter() {
         <section
           ref={earthkindRef}
           id="showcase-earthkind"
-          className="w-full rounded-3xl bg-[#14221C] border border-[#819845]/25 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
+          className="w-full rounded-2xl sm:rounded-3xl bg-[#14221C] border border-[#819845]/25 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
           aria-label="EarthKind Brand Identity System"
         >
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#819845]/20">
@@ -370,7 +417,7 @@ export default function BrandIdentityChapter() {
                   aspect: "aspect-[16/9]",
                 })
               }
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#819845]/30 text-xs font-mono text-[#D4DEC9] hover:text-white transition-all self-start lg:self-end shrink-0"
+              className="inline-flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#819845]/30 text-xs font-mono text-[#D4DEC9] hover:text-white transition-all self-start lg:self-end shrink-0 min-h-[44px] sm:min-h-0"
             >
               <Maximize2 size={13} />
               <span>Inspect full board</span>
@@ -480,7 +527,7 @@ export default function BrandIdentityChapter() {
                         setEarthkindTouchpoint(idx);
                       }
                     }}
-                    className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                    className={`p-3 rounded-xl border text-left transition-all cursor-pointer min-h-[44px] ${
                       isSelected
                         ? "bg-white/15 border-[#819845] ring-2 ring-[#819845]/50 shadow-lg text-white"
                         : "bg-white/5 border-white/10 hover:border-white/30 text-white/70"
@@ -504,7 +551,7 @@ export default function BrandIdentityChapter() {
         <section
           ref={veloraLeatherRef}
           id="showcase-velora"
-          className="w-full rounded-3xl bg-[#1C1614] border border-[#B7A391]/25 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
+          className="w-full rounded-2xl sm:rounded-3xl bg-[#1C1614] border border-[#B7A391]/25 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
           aria-label="Vélora Leather Goods Brand Identity"
         >
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#B7A391]/20">
@@ -530,7 +577,7 @@ export default function BrandIdentityChapter() {
                   aspect: "aspect-[4/5]",
                 })
               }
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#B7A391]/30 text-xs font-mono text-[#D8CEBC] hover:text-white transition-all self-start lg:self-end shrink-0"
+              className="inline-flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#B7A391]/30 text-xs font-mono text-[#D8CEBC] hover:text-white transition-all self-start lg:self-end shrink-0 min-h-[44px] sm:min-h-0"
             >
               <Maximize2 size={13} />
               <span>Inspect full board</span>
@@ -633,7 +680,7 @@ export default function BrandIdentityChapter() {
         <section
           ref={veloraSkincareRef}
           id="showcase-velora-skincare"
-          className="w-full rounded-3xl bg-[#141C16] border border-[#3F523B]/35 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
+          className="w-full rounded-2xl sm:rounded-3xl bg-[#141C16] border border-[#3F523B]/35 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
           aria-label="Vélora Botanical Skincare Brand Identity"
         >
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#3F523B]/25">
@@ -659,7 +706,7 @@ export default function BrandIdentityChapter() {
                   aspect: "aspect-[2/3]",
                 })
               }
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#3F523B]/40 text-xs font-mono text-[#C2D0BE] hover:text-white transition-all self-start lg:self-end shrink-0"
+              className="inline-flex items-center gap-2 px-3.5 py-2 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-[#3F523B]/40 text-xs font-mono text-[#C2D0BE] hover:text-white transition-all self-start lg:self-end shrink-0 min-h-[44px] sm:min-h-0"
             >
               <Maximize2 size={13} />
               <span>Inspect full board</span>
@@ -763,12 +810,12 @@ export default function BrandIdentityChapter() {
         <section
           ref={nexaRef}
           id="showcase-nexa"
-          className="w-full rounded-3xl bg-[#0B0D10] border border-[#B4F000]/25 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden my-auto scroll-mt-[calc(var(--nav-height,64px)+1rem)]"
+          className="w-full rounded-2xl sm:rounded-3xl bg-[#0B0D10] border border-[#B4F000]/25 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden my-auto scroll-mt-[calc(var(--nav-height,64px)+1rem)]"
           aria-label="NEXA High-Performance Brand Identity and Packaging"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* LEFT COLUMN: TITLE, SPECS, NUTRITION CALLOUTS & SUB-NAVIGATION */}
-            <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-6 order-2 lg:order-1">
               <div>
                 <div className="flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-widest text-[#B4F000]">
                   <span className="w-2 h-2 rounded-full bg-[#B4F000] animate-pulse" />
@@ -836,8 +883,8 @@ export default function BrandIdentityChapter() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: TALL PACKAGING ARTWORK COMMANDING RIGHT SIDE (Natural 2:3 ratio, snug fit, zero black borders) */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-center">
+            {/* RIGHT COLUMN: TALL PACKAGING ARTWORK COMMANDING RIGHT SIDE (Natural 2:3 ratio, snug fit, zero black borders, artwork first on mobile) */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2">
               <div
                 onClick={() =>
                   setLightbox({
@@ -907,7 +954,7 @@ export default function BrandIdentityChapter() {
                 type="button"
                 onClick={() => setLightbox(null)}
                 aria-label="Close enlarged view"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
+                className="w-11 h-11 min-h-[44px] min-w-[44px] rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
               >
                 <X size={16} />
               </button>

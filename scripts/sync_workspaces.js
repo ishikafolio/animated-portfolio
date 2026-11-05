@@ -6,6 +6,7 @@ const DEST = "C:/Users/yoges/Documents/Codex/2026-11-02/connection-interrupted-w
 
 const files = [
   'src/app/globals.css',
+  'src/components/layout/HeaderNav.tsx',
   'src/components/studio/AaraRitual.tsx',
   'src/components/home/HeroSection.tsx',
   'src/components/home/AboutSection.tsx',

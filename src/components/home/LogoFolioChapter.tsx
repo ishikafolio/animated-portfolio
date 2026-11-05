@@ -245,60 +245,92 @@ export default function LogoFolioChapter() {
         }
       });
 
-      // MOBILE: Native touch sequence with visible mask aperture effect
+      // MOBILE: Dedicated native scroll timeline with smooth artwork mask reveal & gallery transition
       mm.add("(max-width: 1023px)", () => {
+        // Hero Opening: aperture mask reveal & title entrance
+        const mobileTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 0.6,
+          },
+        });
+
         if (titleWordRef.current) {
-          gsap.fromTo(
+          mobileTl.fromTo(
             titleWordRef.current,
-            { y: 20, opacity: 0.4 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: titleWordRef.current,
-                start: "top 85%",
-                end: "top 50%",
-                scrub: 0.5,
-              },
-            }
+            { y: 35, opacity: 0.2 },
+            { y: 0, opacity: 1, ease: "power2.out", duration: 0.35 },
+            0
+          );
+        }
+
+        if (subtitleRef.current) {
+          mobileTl.fromTo(
+            subtitleRef.current,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 0.9, ease: "power2.out", duration: 0.3 },
+            0.1
+          );
+        }
+
+        if (maskApertureRef.current) {
+          mobileTl.fromTo(
+            maskApertureRef.current,
+            { clipPath: "circle(30% at 50% 50%)", scale: 0.94 },
+            { clipPath: "circle(78% at 50% 50%)", scale: 1.0, ease: "power2.out", duration: 0.5 },
+            0.05
           );
         }
 
         if (oversizedMarkContainerRef.current) {
-          gsap.fromTo(
+          mobileTl.fromTo(
             oversizedMarkContainerRef.current,
-            { scale: 0.92, opacity: 0.7 },
-            {
-              scale: 1.0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: oversizedMarkContainerRef.current,
-                start: "top 85%",
-                end: "bottom 55%",
-                scrub: 0.5,
-              },
-            }
+            { opacity: 0.6 },
+            { opacity: 1, ease: "power1.out", duration: 0.3 },
+            0.05
           );
         }
 
-        if (galleryGridRef.current) {
-          gsap.fromTo(
-            galleryGridRef.current,
-            { y: 25, opacity: 0.6 },
-            {
-              y: 0,
-              opacity: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: galleryGridRef.current,
-                start: "top 85%",
-                end: "top 45%",
-                scrub: 0.5,
-              },
-            }
-          );
+        // Transition into Assembled Marks Gallery
+        if (gallerySectionRef.current) {
+          if (galleryHeadingRef.current) {
+            gsap.fromTo(
+              galleryHeadingRef.current,
+              { y: 30, opacity: 0.4 },
+              {
+                y: 0,
+                opacity: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: galleryHeadingRef.current,
+                  start: "top 85%",
+                  end: "top 55%",
+                  scrub: 0.5,
+                },
+              }
+            );
+          }
+
+          if (galleryGridRef.current) {
+            gsap.fromTo(
+              galleryGridRef.current,
+              { y: 35, opacity: 0.6, scale: 0.97 },
+              {
+                y: 0,
+                opacity: 1,
+                scale: 1.0,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: galleryGridRef.current,
+                  start: "top 85%",
+                  end: "top 50%",
+                  scrub: 0.5,
+                },
+              }
+            );
+          }
         }
       });
     }, wrapperRef);
@@ -586,10 +618,10 @@ export default function LogoFolioChapter() {
           {/* =========================================================================
               SKETCH LAYOUT: Featured Artwork Left, Info Right, Thumbnails Beneath
               ========================================================================= */}
-          <div className="mt-10 rounded-3xl bg-[#110A0F] border border-white/15 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div ref={galleryGridRef} className="mt-8 sm:mt-10 rounded-2xl sm:rounded-3xl bg-[#110A0F] border border-white/15 p-4 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
               {/* LEFT: FEATURED ARTWORK */}
-              <div className="lg:col-span-7 relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#090508] group">
+              <div className="lg:col-span-7 relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#090508] group">
                 <Image
                   key={`featured-${activeMarkData.slug}`}
                   src={activeMarkData.panelImage || activeMarkData.heroImage}
@@ -611,7 +643,7 @@ export default function LogoFolioChapter() {
               </div>
 
               {/* RIGHT: PROJECT INFORMATION */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-5 sm:space-y-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-widest text-[#E6ADC7]">
                     <span className="w-2 h-2 rounded-full bg-[#890149]" />
@@ -626,7 +658,7 @@ export default function LogoFolioChapter() {
                     &ldquo;{activeMarkData.tagline}&rdquo;
                   </p>
 
-                  <p className="font-sans text-sm text-white/80 mt-3 leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-white/80 mt-3 leading-relaxed">
                     {activeMarkData.concept}
                   </p>
                 </div>
@@ -647,7 +679,7 @@ export default function LogoFolioChapter() {
                 <div className="pt-2">
                   <Link
                     href={`${logoProject.route}#brand-${activeMarkData.slug}`}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider transition-all min-h-[44px]"
                   >
                     <span>Explore {activeMarkData.name} Study ↗</span>
                   </Link>
@@ -680,7 +712,7 @@ export default function LogoFolioChapter() {
                           setInspectedBrand(i);
                         }
                       }}
-                      className={`text-left p-2.5 rounded-xl border transition-all cursor-pointer group ${
+                      className={`text-left p-2.5 rounded-xl border transition-all cursor-pointer group min-h-[44px] ${
                         isSelected
                           ? "bg-white/15 border-[#E6ADC7] ring-2 ring-[#E6ADC7]/60 shadow-lg"
                           : "bg-white/5 border-white/10 hover:border-white/30 hover:bg-white/[0.08]"

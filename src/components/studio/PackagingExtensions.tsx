@@ -14,7 +14,7 @@ export default function PackagingExtensions() {
           ========================================================================= */}
       <section
         id="showcase-glowbite"
-        className="w-full rounded-3xl bg-gradient-to-b from-[#132218] via-[#101A12] to-[#0D150F] border border-[#8EB897]/25 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden scroll-mt-[calc(var(--nav-height,64px)+1.5rem)]"
+        className="w-full rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#132218] via-[#101A12] to-[#0D150F] border border-[#8EB897]/25 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden scroll-mt-[calc(var(--nav-height,64px)+1.5rem)]"
         aria-label="Glow Bite Energy Bar Packaging"
       >
         {/* Warm directional amber lighting accent */}
